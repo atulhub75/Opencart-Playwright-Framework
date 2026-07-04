@@ -27,9 +27,12 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.3",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "allure-commandline": "^2.42.0",
     "allure-playwright": "^3.9.0",
     "playwright-html-reporter": "^0.1.11",
+    "eslint": "^8.57.0",
     "typescript": "5.9"
   },
   "dependencies": {
