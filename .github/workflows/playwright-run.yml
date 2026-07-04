@@ -142,10 +142,10 @@ jobs:
           publish_dir: gh-pages-deploy
           force_orphan: true
 
-      # 6️⃣ Print final URLs
+            # 6️⃣ Print final URLs
       - name: Report URLs
         run: |
           echo "Reports Published!"
-          echo "Playwright Built-in: https://atulhub75/Opencart-Playwright-Framework/playwright-report/index.html"
-          echo "Playwright HTML Reporter: https://atulhub75/Opencart-Playwright-Framework/playwright-html-report/index.html"
-          echo "Allure: https://atulhub75/Opencart-Playwright-Framework/allure-report/index.html"
+          echo "Playwright Built-in: https://atulhub75.github.io/Opencart-Playwright-Framework/playwright-report/index.html"
+          echo "Playwright HTML Reporter: https://atulhub75.github.io/Opencart-Playwright-Framework/playwright-html-report/index.html"
+          echo "Allure: https://atulhub75.github.io/Opencart-Playwright-Framework/allure-report/index.html"
