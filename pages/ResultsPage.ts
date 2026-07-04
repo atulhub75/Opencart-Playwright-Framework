@@ -1,6 +1,5 @@
 import { Page,Locator } from "@playwright/test";
 import {ElementUtil} from "../utils/ElementUtil";
-import { HomePage } from "../pages/HomePage";
 import { ProductInfoPage } from "../pages/ProductInfoPage";
 
 export class ResultsPage {
@@ -25,7 +24,7 @@ export class ResultsPage {
     async selectProduct(productName:string) :Promise<ProductInfoPage>{
        console.log('====product Name===='+productName);
        await this.eleUtil.click(this.page.getByRole('link', {name:`${productName}`}));
-       return new ProductInfoPage(this.page)
+       return new ProductInfoPage(this.page);
     }
 
    

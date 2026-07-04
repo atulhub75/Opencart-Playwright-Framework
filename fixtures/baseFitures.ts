@@ -20,6 +20,6 @@ export const test = base.extend<myFixtures>({
 
        await use(homePage);
     }
-})
+});
 
 export {expect};

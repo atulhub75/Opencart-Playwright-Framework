@@ -1,6 +1,5 @@
 import { Page,Locator } from "@playwright/test";
 import {ElementUtil} from "../utils/ElementUtil";
-import { HomePage } from "../pages/HomePage";
 
 export class ProductInfoPage {
 
@@ -59,12 +58,12 @@ export class ProductInfoPage {
 
 
     private async getProductMetaData(){
-      let productMetaData:string[]=await this.productMetaData.allInnerTexts();
+      const productMetaData:string[]=await this.productMetaData.allInnerTexts();
 
-      for(let meta of productMetaData){
-           let metadata:string[]= meta.split(':');
-          let metaKey= metadata[0].trim();
-          let metaValue= metadata[1].trim();
+      for(const meta of productMetaData){
+        const metadata:string[]= meta.split(':');
+          const metaKey= metadata[0].trim();
+          const metaValue= metadata[1].trim();
           this.productMap.set(metaKey,metaValue);
       }
 
@@ -73,9 +72,9 @@ export class ProductInfoPage {
     //$602.00
      //Ex Tax: $500.00
      private async getProductPricingData(){
-      let productPricing:string[]=await this.productPriceData.allInnerTexts();
-      let productPrice=productPricing[0].trim();
-      let productExTax= productPricing[1].split(':')[1].trim();
+      const productPricing:string[]=await this.productPriceData.allInnerTexts();
+      const productPrice=productPricing[0].trim();
+      const productExTax= productPricing[1].split(':')[1].trim();
 
       this.productMap.set('price',productPrice);
       this.productMap.set('extraprice',productExTax);

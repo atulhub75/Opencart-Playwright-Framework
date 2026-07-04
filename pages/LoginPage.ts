@@ -45,7 +45,7 @@ export class LoginPage {
 
      async navigateToRegisterPage(): Promise<RegisterPage>{
         await this.eleUtil.click(this.registerLink, {force:true},1);
-        return new RegisterPage(this.page)
+        return new RegisterPage(this.page);
      }
 
 }
