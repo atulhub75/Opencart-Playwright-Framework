@@ -1,4 +1,4 @@
-# PWFWDemo Automation Reports
+# Opencart-Playwright-Framework Automation Reports
 
 Welcome to the **Opencart-Playwright-Framework** automation project. Below you can find the latest test results and HTML reports.
 

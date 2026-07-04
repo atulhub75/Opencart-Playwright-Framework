@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -13,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
+     ['html'],
     ['list'],
     ['allure-playwright'],
      ['playwright-html-reporter', { 
@@ -32,8 +33,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     trace: 'on-first-retry',
-    headless: true,
-    screenshot: 'on',
+    headless: !!process.env.CI,
+    screenshot: 'on-first-failure',
     video: 'on',
     baseURL:'https://naveenautomationlabs.com/opencart/index.php',
   },
@@ -50,10 +51,10 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'] },
     // },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
 
     // {
     //   name: 'webkit',
@@ -75,10 +76,10 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    // },
   ],
 
   /* Run your local dev server before starting the tests */
