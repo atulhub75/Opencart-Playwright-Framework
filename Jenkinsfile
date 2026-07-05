@@ -816,6 +816,8 @@ ${env.PROD_EMOJI ?: '❓'} PROD: ${env.PROD_TEST_STATUS ?: 'not run'}
             echo '⚠️ Pipeline completed with warnings!'
 
             script {
+
+                echo "Slack notification skipped."
                /* try {
                     slackSend(
                         color: 'warning',
