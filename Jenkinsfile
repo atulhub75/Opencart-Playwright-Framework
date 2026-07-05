@@ -36,7 +36,7 @@ pipeline {
         NODE_VERSION = '20'
         CI = 'true'
         PLAYWRIGHT_BROWSERS_PATH = "${WORKSPACE}/.cache/ms-playwright"
-        SLACK_WEBHOOK_URL = credentials('slack-webhook-token')
+       // SLACK_WEBHOOK_URL = credentials('slack-webhook-token')
         // Email recipients - update these with your actual email addresses
         EMAIL_RECIPIENTS = 'atulmargil777@gmail.com, atulmargil75@gmail.com'
     }
@@ -509,7 +509,7 @@ ${prodEmoji} PROD:  ${prodStatus}
 
             script {
                 // Slack notification
-                try {
+               /* try {
                     slackSend(
                         color: 'good',
                         message: """✅ *Playwright Pipeline: All Tests Passed*
@@ -529,7 +529,7 @@ ${env.PROD_EMOJI} PROD: ${env.PROD_TEST_STATUS}
                     )
                 } catch (Exception e) {
                     echo "Slack notification failed: ${e.message}"
-                }
+                }*/
 
                 // Email notification
                 try {
@@ -664,7 +664,7 @@ ${env.PROD_EMOJI} PROD: ${env.PROD_TEST_STATUS}
 
             script {
                 // Slack notification
-                try {
+                /*try {
                     slackSend(
                         color: 'danger',
                         message: """❌ *Playwright Pipeline: Tests Failed*
@@ -684,7 +684,7 @@ ${env.PROD_EMOJI ?: '❓'} PROD: ${env.PROD_TEST_STATUS ?: 'not run'}
                     )
                 } catch (Exception e) {
                     echo "Slack notification failed: ${e.message}"
-                }
+                }*/
 
                 // Email notification
                 try {
@@ -816,7 +816,7 @@ ${env.PROD_EMOJI ?: '❓'} PROD: ${env.PROD_TEST_STATUS ?: 'not run'}
             echo '⚠️ Pipeline completed with warnings!'
 
             script {
-                try {
+               /* try {
                     slackSend(
                         color: 'warning',
                         message: """⚠️ *Playwright Pipeline: Unstable*
@@ -830,7 +830,7 @@ ${env.PROD_EMOJI ?: '❓'} PROD: ${env.PROD_TEST_STATUS ?: 'not run'}
                     )
                 } catch (Exception e) {
                     echo "Slack notification failed: ${e.message}"
-                }
+                }*/
             }
         }
     }
